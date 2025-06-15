@@ -1,4 +1,4 @@
-![Screenshot 2025-06-15 213048](https://github.com/user-attachments/assets/17a7f5ea-f8d2-42df-b500-ec1e38196537)# Automated-Certificate-Generator
+# Automated-Certificate-Generator
 # 🧾 Birth & Death Certificate Generator Automation
 
 An automated system that simulates an **e-Governance module** used in municipal systems to generate digitally verifiable **Birth** and **Death Certificates** from structured user data. Built using Python and HTML templates with optional QR code integration, this project streamlines certificate creation with form-based data input and secure PDF generation.
