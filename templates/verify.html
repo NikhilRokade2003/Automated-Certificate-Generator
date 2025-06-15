@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Verification</title>
+</head>
+<body>
+    <h2>Certificate Verification</h2>
+
+    {% if data %}
+        <p><strong>Certificate ID:</strong> {{ data.certificate_id }}</p>
+        <p><strong>Type:</strong> {{ data.type.title() }}</p>
+        <p><strong>Full Name:</strong> {{ data.name }}</p>
+        <p><strong>Date of {{ 'Birth' if data.type == 'birth' else 'Death' }}:</strong> {{ data.date }}</p>
+        <p><strong>Gender:</strong> {{ data.gender }}</p>
+        <p><strong>Place of {{ 'Birth' if data.type == 'birth' else 'Death' }}:</strong> {{ data.place }}</p>
+        <p><strong>Relative Name:</strong> {{ data.relative }}</p>
+        <p><strong>Issuing Authority:</strong> {{ data.authority }}</p>
+        <p><strong>Issue Date:</strong> {{ data.issue_date }}</p>
+        <p style="color:green;"><strong>Status:</strong> ✅ Verified & Authentic</p>
+    {% elif error %}
+        <p style="color:red;"><strong>{{ error }}</strong></p>
+    {% endif %}
+</body>
+</html>

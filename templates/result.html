@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Submitted</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+    <!-- Success Toast -->
+    <div class="toast" id="toast">🎉 Certificate generated successfully!</div>
+
+    <div style="text-align:center; margin-top: 30px;">
+        <h2>Certificate Generated!</h2>
+        <p><strong>Name:</strong> {{ data.name }}</p>
+        <p><strong>Certificate Type:</strong> {{ data.type.title() }}</p>
+        <p><strong>Certificate ID:</strong> {{ data.certificate_id }}</p>
+        <p><strong>Issue Date:</strong> {{ data.issue_date }}</p>
+
+        <a href="{{ cert_path }}" download>
+            <button>Download Certificate PDF</button>
+        </a>
+        <br><br>
+
+        <a href="/admin">
+            <button type="button">Go to Admin Dashboard</button>
+        </a>
+    </div>
+
+    <!-- Toast Script -->
+    <script>
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000);
+    </script>
+
+</body>
+</html>

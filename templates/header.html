@@ -1,0 +1,20 @@
+<!-- templates/header.html -->
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<header style="background:#3eef27; padding:15px 20px; display:flex; flex-direction:column; align-items:center; position:sticky; top:0; z-index:999;">
+    <!-- Go to Home button -->
+    <div style="position:absolute; top:10px; right:20px;">
+        <a href="/">
+            <button style="padding:6px 12px; background:#fff; color:#3eef27; border: 2px solid #3eef27; font-weight:bold; border-radius:6px;">
+                Go to Home
+            </button>
+        </a>
+    </div>
+
+    <!-- Header title -->
+    <h1 style="margin-top:10px; margin-bottom:0; font-size:2rem; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#000; font-weight:600;">
+        Certificate Generator
+    </h1>
+</header>

@@ -1,0 +1,75 @@
+{% include 'header.html' %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Issued Certificates</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+
+    <form method="get" action="/admin">
+        <label>Filter by Type:</label>
+        <select name="type">
+            <option value="">All</option>
+            <option value="birth">Birth</option>
+            <option value="death">Death</option>
+        </select>
+        <button type="submit">Filter</button>
+
+        <form method="get" action="/admin">
+    <input type="hidden" name="export" value="csv">
+    <button type="submit">Download as CSV</button>
+</form>
+<br>
+
+    </form>
+
+    <br>
+
+    {% if records %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Certificate ID</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Gender</th>
+                    <th>Place</th>
+                    <th>Relative</th>
+                    <th>Authority</th>
+                    <th>Issue Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cert in records %}
+                <tr>
+                    <td>{{ cert.certificate_id }}</td>
+                    <td>{{ cert.type }}</td>
+                    <td>{{ cert.name }}</td>
+                    <td>{{ cert.date }}</td>
+                    <td>{{ cert.gender }}</td>
+                    <td>{{ cert.place }}</td>
+                    <td>{{ cert.relative }}</td>
+                    <td>{{ cert.authority }}</td>
+                    <td>{{ cert.issue_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No certificates found.</p>
+    {% endif %}
+</body>
+</html>

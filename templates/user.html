@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h3 style="text-align:center;">Select Certificate Type:</h3>
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/form/birth"><button style="padding:10px 20px;">Birth Certificate</button></a>
+        <a href="/form/death"><button style="padding:10px 20px;">Death Certificate</button></a>
+    </div>
+</body>

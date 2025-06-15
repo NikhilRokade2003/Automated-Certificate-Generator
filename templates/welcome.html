@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h3 style="text-align:center;margin-top:180px; color: #f0eded;">Welcome! Choose an option to proceed:</h3>
+    <div style="text-align:center; margin-top:50px;">
+        <a href="/user"><button style="padding:10px 20px;">User</button></a>
+        <a href="/admin"><button style="padding:10px 20px;">Admin</button></a>
+    </div>
+</body>

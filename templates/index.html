@@ -1,0 +1,63 @@
+{% include 'header.html' %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Generator</title>
+</head>
+<body>
+
+    <!-- Admin Dashboard Button -->
+    <a href="/admin">
+        <button type="button">Go to Admin Dashboard</button>
+    </a>
+    <br><br>
+
+    <form action="/generate" method="POST">
+        <input type="hidden" name="type" value="{{ cert_type }}">
+
+        <label>Certificate Type:</label>
+        <select name="type" required>
+            <option value="">Select</option>
+            <option value="birth">Birth Certificate</option>
+            <option value="death">Death Certificate</option>
+        </select><br><br>
+
+        <label>Full Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label>Date of Birth / Death:</label>
+        <input type="date" name="date" required><br><br>
+
+        <label>Gender:</label>
+        <select name="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label>Place of Birth / Death:</label>
+        <input type="text" name="place" required><br><br>
+
+        <label>Parent/Relative Name:</label>
+        <input type="text" name="relative" required><br><br>
+
+        <label>Issuing Authority:</label>
+        <input type="text" name="authority" required><br><br>
+
+        <label>QR Code Type:</label>
+        <select name="qr_mode" required>
+            <option value="link">Verification Link (default)</option>
+            <option value="full">Full Certificate Data</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Generate Certificate</button>
+    </form>
+</body>
+</html>
