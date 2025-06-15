@@ -71,7 +71,7 @@ CertificateGenerator/
 
 > Replace the image below with the actual output image of the `.html` rendered birth certificate PDF.
 
-![Birth Certificate](output_images/birth_certificate_output.png)
+![birth_template](https://github.com/user-attachments/assets/2faf4111-52fe-4997-9893-cd1c783c2a09)
 
 ---
 
@@ -79,7 +79,8 @@ CertificateGenerator/
 
 > Replace the image below with the actual output image of the `.html` rendered death certificate PDF.
 
-![Death Certificate](output_images/death_certificate_output.png)
+
+![death_template](https://github.com/user-attachments/assets/d37aaf38-e977-4dcf-a0bc-26617113d73d)
 
 ---
 
